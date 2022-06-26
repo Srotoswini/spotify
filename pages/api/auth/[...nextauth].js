@@ -57,13 +57,14 @@ export default NextAuth({
     }
   }
 
-  if (Date.now() < token.accessTokenExpires) {
+  if (Date.now() < token.accessTokenExpires) 
+  {
     console.log("VALID")
     return token;
   }
 
   console.log("ACCESS TOKEN HAS EXPIRED, RESPONDING...")
   return await refreshAccessToken(token)
-  },
-},
+  }
+}
 );
